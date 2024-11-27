@@ -7,22 +7,22 @@ const Sidebar = () => (
 
         {/* Иконка "Дом" */}
         <div className="cursor-pointer mt-6">
-            <img src="/icon/home-2.svg" alt="Дом" className="w-8 h-8 text-gray-300 hover:text-white" />
+            <img src="/icon/home-2.svg" alt="Дом" className="w-6 h-6 text-gray-300 hover:text-white" />
         </div>
 
         {/* Иконка "Пользователь" */}
         <div className="cursor-pointer mt-6">
-            <img src="/icon/message.svg" alt="Пользователь" className="w-8 h-8 text-gray-300 hover:text-white" />
+            <img src="/icon/messages.svg" alt="Пользователь" className="w-6 h-6 text-gray-300 hover:text-white" />
         </div>
 
         {/* Иконка "Настройки " */}
         <div className="cursor-pointer mt-6">
-            <img src="/icon/notification.svg" alt="Настройки" className="w-8 h-8 text-gray-300 hover:text-white" />
+            <img src="/icon/notification.svg" alt="Настройки" className="w-6 h-6 text-gray-300 hover:text-white" />
         </div>
 
         {/* Иконка "Контакты" */}
         <div className="cursor-pointer mt-6">
-            <img src="/icon/people.svg" alt="Контакты" className="w-8 h-8 text-gray-300 hover:text-white" />
+            <img src="/icon/people.svg" alt="Контакты" className="w-6 h-6 text-gray-300 hover:text-white" />
         </div>
 
         {/* Линия разделения снизу ghbdtn*/}
@@ -30,7 +30,7 @@ const Sidebar = () => (
 
         {/* Иконка "Пользователь" (последняя) */}
         <div className="cursor-pointer mt-6">
-            <img src="/icon/user-square.svg" alt="Пользователь" className="w-8 h-8 text-gray-300 hover:text-white" />
+            <img src="/icon/setting-2.svg" alt="Пользователь" className="w-6 h-6 text-gray-300 hover:text-white" />
         </div>
     </div>
 );

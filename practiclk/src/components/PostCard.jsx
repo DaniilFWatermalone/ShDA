@@ -10,7 +10,7 @@ const PostCard = () => {
     };
 
     return (
-        <div className="bg-customGray text-white p-4 rounded-lg relative shadow-md max-w-lg mx-auto">
+        <div className="bg-customGray text-white p-4 rounded-lg relative shadow-md max-w-lg mx-auto overflow-hidden">
             {/* Верхняя часть карточки: информация о пользователе */}
             <div className="flex items-center mb-4">
                 <img
@@ -26,7 +26,7 @@ const PostCard = () => {
                     <button className="text-gray-400 hover:text-gray-200">
                         <img
                             src="/icon/more-horizontal.svg"
-                            alt="Message Icon"
+                            alt="More Options Icon"
                             className="h-5 w-5"
                         />
                     </button>
@@ -34,11 +34,11 @@ const PostCard = () => {
             </div>
 
             {/* Основное изображение поста */}
-            <div className="mb-4">
+            <div className="-mx-4 mb-4">
                 <img
                     src="/post/unsplash_WMD64tMfc4k-1.png"
                     alt="Main Post"
-                    className="w-full h-auto"
+                    className="w-full h-auto object-cover"
                 />
             </div>
 
@@ -52,7 +52,7 @@ const PostCard = () => {
             <div className="flex items-center mt-4 pt-2">
                 {/* Лайки */}
                 <div
-                    className="flex items-center space-x-2 bg-customGray px-2 py-1 rounded-full mr-4 border-2 border-opacity-45 border-borderGray cursor-pointer"
+                    className="flex items-center space-x-2 bg-customGray px-3 py-1 rounded-full mr-4 border border-gray-600 cursor-pointer"
                     onClick={toggleLike}
                 >
                     <img
@@ -64,7 +64,7 @@ const PostCard = () => {
                 </div>
 
                 {/* Комментарии */}
-                <div className="flex items-center space-x-2 bg-customGray px-2 py-1 rounded-full border-2 border-opacity-45 border-borderGray">
+                <div className="flex items-center space-x-2 bg-customGray px-3 py-1 rounded-full border border-gray-600">
                     <img
                         src="/icon/message-text.svg"
                         alt="Message Icon"

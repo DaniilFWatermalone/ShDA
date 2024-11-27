@@ -2,82 +2,127 @@ import React, { useState } from 'react';
 
 // Компонент Modal
 const Modal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null; // Если модальное окно закрыто, ничего не показываем
+  if (!isOpen) return null;
 
   return (
-    <div className="bg-opacity-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 backdrop-blur-sm">
-      <div className="bg-customGray p-6 rounded-lg w-72 space-y-6 shadow-lg relative">
-        {/* Заголовок модального окна */}
-        <h2 className="text-xl font-semibold text-white text-center mb-4">Что нового?</h2>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 backdrop-blur-sm">
+      {/* Контейнер модального окна */}
+      <div className="bg-customGray p-6 rounded-lg w-[360px] space-y-4 shadow-lg relative">
+                {/* Кнопка закрытия */}
+                <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        {/* Заголовок */}
+        <h2 className="text-white text-center text-sm font-normal">Что у вас нового?</h2>
 
-        {/* Поле для ввода сообщения */}
-        <div className="bg-customGray border-2 border-gray-300 p-4 rounded-lg text-gray-500">
-          <textarea
-            className="w-full h-24 bg-customGray text-gray-500 border-none resize-none focus:outline-none"
-            placeholder="Сообщение"
-          />
+        {/* Поле для ввода текста */}
+        <textarea
+          className="w-full h-24 bg-[#292929] text-[#6F6F6F] text-sm p-3 rounded-lg resize-none border-none focus:outline-none"
+          placeholder="Сообщение"
+        ></textarea>
+
+        {/* Социальные сети */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between bg-[#292929] text-[#6F6F6F] text-sm px-4 py-3 rounded-lg">
+            <span>ВКонтакте</span>
+            <button className="text-[#6F6F6F] hover:text-gray-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5l6 6m0 0l-6 6m6-6H6"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="flex items-center justify-between bg-[#292929] text-[#6F6F6F] text-sm px-4 py-3 rounded-lg">
+            <span>Telegram</span>
+            <button className="text-[#6F6F6F] hover:text-gray-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5l6 6m0 0l-6 6m6-6H6"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Блок для ссылок на соцсети */}
-        <div className="bg-customGray border-2 border-gray-300 p-4 rounded-lg text-gray-500 space-y-2">
-          <div className="flex items-center space-x-2">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:underline"
+        {/* Кнопки для выбора файлов */}
+        <div className="flex justify-start space-x-4">
+          <button className="flex items-center bg-[#292929] text-[#6F6F6F] text-sm px-4 py-2 rounded-lg hover:text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5 mr-2"
             >
-              Facebook
-            </a>
-          </div>
-          <div className="flex items-center space-x-2">
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:underline"
-            >
-              Twitter
-            </a>
-          </div>
-          <div className="flex items-center space-x-2">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:underline"
-            >
-              Instagram
-            </a>
-          </div>
-        </div>
-
-        {/* Блок для загрузки фото и файла */}
-        <div className="flex mt-4">
-          <button className="bg-gray-700 mr-4 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 9V5.25m0 0V9m0-3.75h-3m3 3.75h3m0 0v3m0-3.75H15.75m-6 3h3m-3-3.75v3m3-3V9m0 0h3m-3-3.75H9m6 3h3m0 0V9m0-3H9"
+              />
+            </svg>
             Фото
           </button>
-          <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+          <button className="flex items-center bg-[#292929] text-[#6F6F6F] text-sm px-4 py-2 rounded-lg hover:text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5 mr-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 6.75h7.5M9 9v6m0 3v-3m6-6v6m0 3v-3"
+              />
+            </svg>
             Файл
           </button>
         </div>
 
-        {/* Кнопка для публикации */}
-        <div className="flex justify-center mt-6">
-          <button
-            onClick={onClose}
-            className="bg-red-500 text-white px-12 py-4 rounded-lg hover:bg-red-600 transition-colors duration-300"
-          >
-            Опубликовать
-          </button>
-        </div>
-
-        {/* Кнопка для закрытия модального окна */}
+        {/* Кнопка публикации */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+          className="w-full bg-[#E53935] text-white py-3 rounded-lg hover:bg-[#d43535] transition-colors"
         >
-          X
+          Опубликовать
         </button>
       </div>
     </div>
