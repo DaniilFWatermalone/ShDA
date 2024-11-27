@@ -1,0 +1,74 @@
+/* Основной контейнер модального окна */
+.modal-container {
+    background: #232323;
+    border-radius: 8px;
+    border: #333333;
+    padding: 20px;
+    width: 601px;
+    height: auto;
+    color: #fff;
+    position: relative;
+}
+
+/* Кнопка закрытия */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Заголовок окна */
+.modal-title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+}
+
+/* Контент */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Одна строка контента */
+.modal-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-row:nth-child(3),
+.modal-row:nth-child(4) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+}
+
+.modal-column {
+    text-align: left;
+}
+
+.modal-column .modal-title{
+    margin-bottom: 10px;
+}
+
+
+/* Текст */
+.modal-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #999999;
+    text-align: left;
+    line-height: 23px;
+    width: auto;
+}
+
